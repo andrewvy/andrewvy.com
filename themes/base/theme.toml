@@ -1,14 +1,14 @@
 name = "Base"
 license = "MIT"
-licenselink = "https://github.com/.../.../LICENSE.md"
-description = ""
-homepage = "http://siteforthistheme.com/"
+licenselink = "https://github.com/andrewvy/andrewvy.com/tree/master/themes/LICENSE.md"
+description = "Base Theme for andrewvy.com"
+homepage = "http://andrewvy.com"
 tags = ["", ""]
 features = ["", ""]
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Andrew Vy"
+  homepage = "http://andrewvy.com"
 
 # If porting an existing theme
 [original]
