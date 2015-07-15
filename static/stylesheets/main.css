@@ -81,6 +81,9 @@ canvas {
   left: 0;
   display: block; }
 
+.canvasWrapper {
+  z-index: -1; }
+
 /*
  *
  * Home Page

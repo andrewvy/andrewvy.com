@@ -77,6 +77,10 @@ canvas {
 	display: block;
 }
 
+.canvasWrapper {
+	z-index: -1;
+}
+
 /*
  *
  * Home Page

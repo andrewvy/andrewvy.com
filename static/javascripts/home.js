@@ -38,9 +38,7 @@
 	scene = new THREE.Scene();
 	scene.fog = new THREE.FogExp2(fogHex, fogDensity);
 
-	container = document.createElement('div');
-	document.body.appendChild(container);
-		document.body.style.overflow = 'hidden';
+	container = document.querySelectorAll('.canvasWrapper')[0]
 
 	geometry = new THREE.Geometry();
 
