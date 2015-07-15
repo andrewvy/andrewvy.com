@@ -3,9 +3,11 @@ var gutil = require('gulp-util');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var mainBowerFiles = require('main-bower-files');
 
 var paths = {
-	vendor: ['assets/javascripts/vendor/*.js', 'bower_components/*.js'],
+	vendor: ['assets/javascripts/vendor/*.js'],
+	bower: ['assets/javascripts/vendor/bower_components'],
 	scripts: ['assets/javascripts/app'],
 	stylesheets: ['assets/stylesheets/**/*.scss']
 };
@@ -24,9 +26,18 @@ gulp.task('vendor', function() {
 		.on('error', gutil.log);
 });
 
+gulp.task('bower', function() {
+	gulp.src(mainBowerFiles())
+		.pipe(concat('bower.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('static/javascripts/bower.js'))
+		.on('error', gutil.log);
+});
+
 gulp.task('watch', function() {
 	gulp.watch(paths.vendor, ['vendor']);
+	gulp.watch(mainBowerFiles(), ['bower']);
 	gulp.watch(paths.stylesheets, ['compile-scss']);
 });
 
-gulp.task('default', ['compile-scss', 'vendor', 'watch']);
+gulp.task('default', ['compile-scss', 'vendor', 'bower', 'watch']);

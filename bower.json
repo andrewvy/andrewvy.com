@@ -11,8 +11,11 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "assets/javascripts/vendor/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "three.js": "mrdoob/three.js"
+  }
 }
