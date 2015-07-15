@@ -1,0 +1,29 @@
+{
+  "name": "andrewvy.com",
+  "version": "1.0.0",
+  "description": "Front-end generator for andrewvy.com",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-util": "^3.0.6",
+    "gulp-watch": "^4.3.1",
+    "livereload": "^0.3.7",
+    "gulp-uglify": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewvy/andrewvy.com.git"
+  },
+  "author": "Andrew Vy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewvy/andrewvy.com/issues"
+  },
+  "homepage": "https://github.com/andrewvy/andrewvy.com#readme"
+}
