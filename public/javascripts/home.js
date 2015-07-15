@@ -30,7 +30,7 @@
 
 	cameraZ = farPlane / 2;
 	fogHex = 0x000000;
-	fogDensity = 0.0009;
+	fogDensity = 0.001;
 
 	camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
 	camera.position.z = cameraZ;
@@ -44,7 +44,7 @@
 
 	geometry = new THREE.Geometry();
 
-	particleCount = 2000;
+	particleCount = 300;
 
 	for (i = 0; i < particleCount; i++) {
 
