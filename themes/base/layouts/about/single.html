@@ -2,7 +2,9 @@
 
 <section class="page--about center">
 	<div class="inner">
-		<div class="name">{{ .Params.name }}</div>
+		<div class="name">
+			<h1>{{ .Params.name }}<h1>
+		</div>
 		<div class="description">{{ .Description }}</div>
 		<div class="role">
 			{{ .Params.job_title}}
@@ -10,15 +12,22 @@
 			<a href="{{ .Params.company_url }}">{{ .Params.company_name }}</a>
 		</div>
 
-		<ul>
-			{{ range $key, $value := .Params.links }}
-			<li>
-				<a class="link" href={{ $value }}>{{ $key }}</a>
-			</li>
-			{{ end }}
-		</ul>
+		<div class="projects">
+			<h2>Projects:</h2>
+			<ul>
+				{{ range $key, $value := .Params.links }}
+				<li>
+					<a class="link" href={{ $value }}>{{ $key }}</a>
+				</li>
+				{{ end }}
+			</ul>
+		</div>
 
-		<a href="/">Home</a>
+		<hr>
+
+		<div class="home">
+			<a href="/">Home</a>
+		</div>
 	</div>
 </section>
 
