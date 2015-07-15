@@ -1,0 +1,25 @@
+{{ partial "header" }}
+
+<section class="page--about center">
+	<div class="inner">
+		<div class="name">{{ .Params.name }}</div>
+		<div class="description">{{ .Description }}</div>
+		<div class="role">
+			{{ .Params.job_title}}
+			at
+			<a href="{{ .Params.company_url }}">{{ .Params.company_name }}</a>
+		</div>
+
+		<ul>
+			{{ range $key, $value := .Params.links }}
+			<li>
+				<a class="link" href={{ $value }}>{{ $key }}</a>
+			</li>
+			{{ end }}
+		</ul>
+
+		<a href="{{ .Site.BaseURL }}">Home</a>
+	</div>
+</section>
+
+{{ partial "footer" }}

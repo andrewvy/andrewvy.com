@@ -7,12 +7,15 @@ body {
   background-color: #fff;
   font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; }
 
+a:hover {
+  background-color: #00bfff; }
+
 /*
  *
  * Home Page
  *
  */
-.homePage-center {
+.center {
   text-align: center;
   dispaly: flex;
   display: -webkit-flex;
@@ -27,15 +30,24 @@ body {
   left: 0;
   min-height: 400px; }
 
-.homePage-inner {
+.inner {
   height: 150px;
   width: 350px;
   text-align: center; }
 
-.homePage-inner ul {
+.inner ul {
   padding: 0; }
 
-.homePage-inner ul li {
+.inner ul li {
   list-style: none;
   display: inline-block;
   padding: 0; }
+
+.homePage-inner ul li {
+  width: 70px; }
+
+.page--about .description {
+  padding: 20px; }
+
+.page--about .role {
+  margin-bottom: 20px; }

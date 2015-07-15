@@ -9,13 +9,17 @@ body {
 	font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 
+a:hover {
+	background-color: #00bfff;
+}
+
 /*
  *
  * Home Page
  *
  */
 
-.homePage-center {
+.center {
 	text-align: center;
 	dispaly: flex;
 	display: -webkit-flex;
@@ -34,18 +38,28 @@ body {
 	min-height: 400px;
 }
 
-.homePage-inner {
+.inner {
 	height: 150px;
 	width: 350px;
 	text-align: center;
 }
 
-.homePage-inner ul {
+.inner ul {
+	padding: 0;
+}
+
+.inner ul li {
+	list-style: none;
+	display: inline-block;
 	padding: 0;
 }
 
 .homePage-inner ul li {
-	list-style: none;
-	display: inline-block;
-	padding: 0;
+	width: 70px;
+}
+
+.page--about {
+	.name {}
+	.description { padding: 20px; }
+	.role { margin-bottom: 20px; }
 }

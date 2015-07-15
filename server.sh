@@ -2,4 +2,4 @@
 
 echo "Starting server.."
 gulp &
-hugo server --watch -t base
+hugo server --watch -t base --buildDrafts

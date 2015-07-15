@@ -1,18 +1,25 @@
 {{ partial "header" }}
 
-<div class="homePage-center">
-	<div class="homePage-inner">
-		<h1>blah</h1>
+<div class="homePage-center center">
+	<div class="homePage-inner inner">
+		<h1>Andrew Vy</h1>
 		<ul>
 			<li>
 				<a href="https://twitter.com/andrew_vy">Twitter</a>
 			</li>
 			<li>
-				<a href="https://google.com">poop</a>
+				<a href="https://github.com/andrewvy">GitHub</a>
 			</li>
 			<li>
-				<a href="https://google.com">poop</a>
+				<a href="mailto:andrew@andrewvy.com">Email</a>
+			</li>
+			<li>
+				<a href="{{ .Site.BaseURL }}/about">About</a>
 			</li>
 		</ul>
 	</div>
 </div>
+
+
+{{ partial "footer" }}
+<script src="{{ .Site.BaseURL }}/javascripts/home.js"></script>
