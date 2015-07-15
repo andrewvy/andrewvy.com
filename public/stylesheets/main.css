@@ -105,11 +105,12 @@ div {
   display: inline-block;
   padding: 0; }
 
-.homePage-inner ul li {
-  width: 70px; }
-
-.homePage-inner h1 {
-  margin: 30px; }
+.homePage-inner {
+  z-index: 2; }
+  .homePage-inner ul li {
+    width: 70px; }
+  .homePage-inner h1 {
+    margin: 30px; }
 
 .page--about .description {
   padding: 5px; }

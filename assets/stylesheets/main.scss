@@ -110,6 +110,8 @@ div { margin: 5px; }
 }
 
 .homePage-inner {
+	z-index: 2;
+
 	ul li { width: 70px; }
 	h1 { margin: 30px; }
 }

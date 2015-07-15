@@ -122,7 +122,6 @@
 	function onDocumentTouchStart(e) {
 
 		if (e.touches.length === 1) {
-
 			e.preventDefault();
 			mouseX = e.touches[0].pageX - windowHalfX;
 			mouseY = e.touches[0].pageY - windowHalfY;
