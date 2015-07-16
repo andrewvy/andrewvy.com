@@ -1,0 +1,19 @@
+{
+	"name": "socket.io",
+	"homepage": "http://socket.io",
+	"description": "JavaScript socket.io library",
+	"main": "socket.io.js",
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"*.md",
+		"docs",
+		"editor",
+		"examples/*",
+		"!examples/js",
+		"src",
+		"test",
+		"utils",
+		"LICENSE"
+	]
+}
