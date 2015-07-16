@@ -74,3 +74,21 @@
         + 'script>')</script></body>
 </html>
 
+<script type="text/javascript">
+	(function() {
+		var socket_server = window.location.hostname === "localhost" ? "localhost:1314" : "node.andrewvy.com"
+		var socket = io(socket_server);
+
+		socket.on('hello_world', function(payload) {
+			console.log(payload.msg);
+
+			var path = window.location.pathname || "/";
+			socket.emit('page_view', { path: window.location.pathname });
+		});
+
+		socket.on('page_view', function(payload) {
+			console.log(payload.msg);
+		});
+	})();
+</script>
+
