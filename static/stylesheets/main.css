@@ -81,6 +81,22 @@ canvas {
 .canvasWrapper {
   z-index: -1; }
 
+.countContainer {
+  position: absolute;
+  top: 15px;
+  left: 15px; }
+
+@-webkit-keyframes highlight {
+  from {
+    background: #fa3c3c; }
+  to {
+    background: #fff; } }
+
+.countContainer .count.has-updated {
+  background: #fa3c3c;
+  -webkit-animation: highlight 500ms;
+  animation: highlight 500ms; }
+
 /*
  *
  * Home Page

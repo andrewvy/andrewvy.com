@@ -60,10 +60,7 @@ body {
 }
 
 a { color: #000; }
-
-a:hover {
-	background-color: #00bfff;
-}
+a:hover { background-color: #00bfff; }
 
 h1 { font-weight: 600; font-size: 26px; margin: 5px; }
 h2 { font-weight: 600; font-size: 20px; margin: 5px; }
@@ -76,8 +73,18 @@ canvas {
 	display: block;
 }
 
-.canvasWrapper {
-	z-index: -1;
+.canvasWrapper { z-index: -1; }
+.countContainer { position: absolute; top: 15px; left: 15px; }
+
+@-webkit-keyframes highlight {
+	from {background: #fa3c3c;}
+	to {background: #fff;}
+}
+
+.countContainer .count.has-updated {
+	background: #fa3c3c;
+	-webkit-animation: highlight 500ms;
+	animation: highlight 500ms;
 }
 
 /*

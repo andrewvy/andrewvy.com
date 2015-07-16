@@ -3,15 +3,73 @@
 		var socket_server = window.location.hostname === "localhost" ? "localhost:1314" : "node.andrewvy.com"
 		var socket = io(socket_server);
 
-		socket.on('hello_world', function(payload) {
-			console.log(payload.msg);
+		// Creates our online people counter..
 
+		var countContainer = document.createElement('div');
+		var count = document.createElement('span');
+		var label = document.createElement('span');
+		var container = document.querySelectorAll('body')[0];
+		var numericalRegex = /^(0|[1-9][0-9]*)$/;
+
+		if (countContainer.classList) {
+			countContainer.classList.add('countContainer');
+			count.classList.add('count');
+			label.classList.add('label');
+		} else {
+			countContainer.className = 'countContainer';
+			count.className = 'count';
+			label.className = 'label';
+		}
+
+		countContainer.insertBefore(count, countContainer.firstChilde);
+		countContainer.appendChild(label);
+
+		count.textContent = 0;
+		label.textContent = ' online.'
+		container.appendChild(countContainer);
+
+		socket.on('connection', function() {
 			var path = window.location.pathname || "/";
 			socket.emit('page_view', { path: window.location.pathname });
+		});
+
+		socket.on('hello_world', function(payload) {
+			console.log(payload.msg + " " + payload.people + " online.");
+			updateCount(payload.people);
 		});
 
 		socket.on('page_view', function(payload) {
 			console.log(payload.msg);
 		});
+
+		function updateCount(people) {
+			if (numericalRegex.test(people)) {
+				count.textContent = people;
+
+				addClass('has-updated');
+				setTimeout(function() {
+					removeClass('has-updated');
+				}, 500);
+
+			} else {
+				count.textContent = 0;
+			}
+		}
+
+		function addClass(className) {
+			if (count.classList) {
+				count.classList.add(className);
+			} else {
+				count.className += ' ' + className;
+			}
+		}
+
+		function removeClass(className) {
+			if (count.classList) {
+				count.classList.remove(className);
+			} else {
+				count.className = count.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+			}
+		}
 	})();
 </script>
