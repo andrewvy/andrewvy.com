@@ -15,11 +15,26 @@
 		<div class="projects">
 			<h2>Projects:</h2>
 			<ul>
-				{{ range $key, $value := .Params.links }}
 				<li>
-					<a class="link" href={{ $value }}>{{ $key }}</a>
+					<a class="link" href="https://github.com/andrewvy/nima">Nima</a>
+					<div class="link_description">RST-based static website generator in Nim</div>
 				</li>
-				{{ end }}
+				<li>
+					<a class="link" href="https://github.com/andrewvy/HHVMCraft">HHVMCraft</a>
+					<div class="link_description">Minecraft Server implemented in PHP, originally designed for the HHVM platform and transitioned to vanilla PHP.</div>
+				</li>
+				<li>
+					<a class="link" href="https://github.com/andrewvy/phpnes">PHPNES</a>
+					<div class="link_description">NES Emulator implemented in PHP.</div>
+				</li>
+				<li>
+					<a class="link" href="https://github.com/andrewvy/league-node">league-node</a>
+					<div class="link_description">League of Legends RTMP Client written in Node.js</div>
+				</li>
+				<li>
+					<a class="link" href="https://github.com/andrewvy/slack-pongbot">slack-pongbot</a>
+					<div class="link_description">Slack bot for ping-pong tracking</div>
+				</li>
 			</ul>
 		</div>
 

@@ -138,6 +138,11 @@ canvas {
 	.name {}
 	.description { padding: 5px; }
 	.projects { margin-bottom: 25px; }
-	.role { margin-bottom: 20px; }
+	.role { margin: 20px; }
 	.home { margin-top: 20px; }
+
+	.projects ul {
+		li { margin-bottom: 20px; }
+		.link_description { margin-top: 5px; }
+	}
 }

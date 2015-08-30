@@ -143,7 +143,13 @@ canvas {
   margin-bottom: 25px; }
 
 .page--about .role {
-  margin-bottom: 20px; }
+  margin: 20px; }
 
 .page--about .home {
   margin-top: 20px; }
+
+.page--about .projects ul li {
+  margin-bottom: 20px; }
+
+.page--about .projects ul .link_description {
+  margin-top: 5px; }
