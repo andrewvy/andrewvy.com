@@ -1,0 +1,11 @@
+<li class="post">
+	<div class="post-header">
+		<a href="{{ .RelPermalink }}" class="post-title">{{ .LinkTitle }}</a>
+		<span class="post-date">{{ .PublishDate }}</span>
+		<span class="post-readtime"> {{ .ReadingTime }} - {{.FuzzyWordCount}} </span>
+		<span class="post-viewcount"></span>
+	</div>
+	<div class="post-summary">
+		{{ .Summary }}
+	</div>
+</li>

@@ -1,0 +1,14 @@
+{{ partial "header" }}
+
+<section class="page--posts center">
+	<div class="inner">
+		<ul>
+			{{ range .Data.Pages }}
+				{{ .Render "li" }}
+			{{ end }}
+		</ul>
+	</div>
+</section>
+
+{{ partial "footer" }}
+{{ partial "socket_io" }}
