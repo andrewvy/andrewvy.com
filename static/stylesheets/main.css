@@ -97,6 +97,18 @@ canvas {
   -webkit-animation: highlight 500ms;
   animation: highlight 500ms; }
 
+.code {
+  position: fixed;
+  opacity: 0.04;
+  cursor: default;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  white-space: pre-line;
+  font-size: 9px; }
+
 /*
  *
  * Home Page
