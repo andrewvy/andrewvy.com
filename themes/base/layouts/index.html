@@ -1,5 +1,175 @@
 {{ partial "header" }}
 
+<div class="code">
+	/**
+	 * This file is part of PHPNES - a NES Emulator implemented in PHP
+	 * Based off of Ben Firshman's JSNES and Jamie Sanders' vNES.
+	 *
+	 * @copyright Andrew Vy 2015
+	 * @license GPL
+	 */
+
+	namespace PHPNES;
+
+	class ROM {
+		const VERTICAL_MIRRORING = 0;
+		const HORIZONTAL_MIRRORING = 1;
+		const FOURSCREEN_MIRRORING = 2;
+		const SINGLESCREEN_MIRRORING = 3;
+		const SINGLESCREEN_MIRRORING2 = 4;
+		const SINGLESCREEN_MIRRORING3 = 5;
+		const SINGLESCREEN_MIRRORING4 = 6;
+		const CHRROM_MIRRORING = 7;
+
+		public $NES;
+
+		public $header;
+		public $rom;
+		public $vrom;
+		public $vromTile;
+
+		public $romCount;
+		public $vromCount;
+		public $mirroring;
+		public $batteryRam;
+		public $trainer;
+		public $fourScreen;
+		public $mapperType;
+		public $isValid = false;
+		public $mapperName = [];
+
+		public function __construct($NES) {
+			$this->NES = $NES;
+			$this->mapperName = array_fill(0, 92, "Unknown Mapper");
+		}
+
+		public function load($data) {
+			$dataLength = strlen($data);
+
+			if (strrpos($data, "NES\x1a") === false) {
+				// This is an invalid ROM.
+				return false;
+			}
+
+			$this->header = array_fill(0, 6, 0x00);
+
+			for ($i = 0; $i < 16; $i++) {
+				$this->header[$i] = ord($data[$i]) & 0xFF;
+			}
+
+			$this->romCount = $this->header[4];
+			$this->vromCount = $this->header[5] * 2;
+			$this->mirroring = (($this->header[6] & 1) !== 0 ? 1 : 0);
+			$this->batteryRam = ($this->header[6] & 2) !== 0;
+			$this->trainer = ($this->header[6] & 4) !== 0;
+			$this->fourScreen = ($this->header[6] & 8) !== 0;
+			$this->mapperType = ($this->header[6] >> 4) | ($this->header[7] & 0xF0);
+
+			$foundError = false;
+
+			for ($i = 8; $i < 16; $i++) {
+				if ($this->header[$i] !== 0) {
+					$foundError = true;
+					break;
+				}
+			}
+
+			if ($foundError) {
+				$this->mapperType &= 0xF;
+			}
+
+			// Load PRG-ROM Banks
+
+			$this->rom = array_fill(0, $this->romCount, []);
+
+			$offset = 16;
+
+			for ($i = 0; $i < $this->romCount; $i++) {
+				$this->rom[$i] = array_fill(0, 16384, 0x00);
+				for ($j = 0; $j < 16384; $j++) {
+					// if offset + j >= data length
+					if ($offset + $j >= $dataLength) {
+						break;
+					}
+
+					$this->rom[$i][$j] = ord($data[$offset+$j]) & 0xFF;
+				}
+
+				$offset += 16384;
+			}
+
+			// Load CHR-ROM Banks
+
+			$this->vrom = array_fill(0, $this->vromCount, []);
+
+			for ($i = 0; $i < $this->vromCount; $i ++) {
+				$this->vrom[$i] = array_fill(0, 4096, 0x00);
+				for ($j = 0; $j < 4096; $j++) {
+					if ($offset + $j >= $dataLength) {
+						break;
+					}
+
+					$this->vrom[$i][$j] = ord($data[$offset+$j]) & 0xFF;
+				}
+
+				$offset += 4096;
+			}
+
+			// Create VROM Tiles
+
+			$this->vromTile = array_fill(0, $this->vromCount, []);
+
+			for ($i = 0; $i < $this->vromCount; $i++) {
+				$this->vromTile[$i] = array_fill(0, 256, 0x00);
+				for ($j = 0; $j < 256; $j++) {
+					$this->vromTile[$i][$j] = new Tile();
+				}
+			}
+
+			// Convert CHR-ROM Banks to Tiles
+
+			$tileIndex = 0;
+			$leftOver = 0;
+
+			for ($v = 0; $v < $this->vromCount; $v++) {
+				for ($i = 0; $i < 4096; $i++) {
+					$tileIndex = $i >> 4;
+					$leftOver = $i % 16;
+
+					if ($leftOver < 8) {
+						$this->vromTile[$v][$tileIndex]->setScanline(
+							$leftOver,
+							$this->vrom[$v][$i],
+							$this->vrom[$v][$i+8]
+						);
+					} else {
+						$this->vromTile[$v][$tileIndex]->setScanline(
+							$leftOver-8,
+							$this->vrom[$v][$i-8],
+							$this->vrom[$v][$i]
+						);
+					}
+				}
+			}
+
+			$this->isValid = true;
+		}
+
+		public function createMapper() {
+			$mapper = $this->NES->MapperProvider->getMapperByType($this->mapperType);
+
+			if ($mapper) {
+				return new $mapper($this->NES);
+			} else {
+				// Mapper doesn't exist or isn't supported
+			}
+		}
+
+		public function getMirroringType() {
+		}
+	}
+</div>
+
 <div class="homePage-center center">
 	<div class="homePage-inner inner">
 		<h1>Andrew Vy</h1>
