@@ -169,3 +169,31 @@ canvas {
 .page--posts {
 	.inner { width: 600px; text-align: left; }
 }
+
+#feed {
+	height: 200px;
+	padding: 15px 15px 0 15px;
+	overflow: hidden;
+	text-align: left;
+
+	.gha-gravatar,
+	.gha-gravatar-commit,
+	.gha-user-info,
+	.gha-gravatar-user {
+		display: none;
+	}
+
+	.gha-time {
+		color: #aaa;
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.gha-commits {
+		font-size: 10px;
+
+		li {
+			width: 100%;
+		}
+	}
+}
