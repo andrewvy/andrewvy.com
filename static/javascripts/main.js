@@ -1,1 +1,1 @@
-!function(){$("#feed").length&&GitHubActivity.feed({username:"andrewvy",selector:"#feed"})}();
+!function(){$("#feed").length&&GitHubActivity.feed({username:"andrewvy",selector:"#feed",limit:5})}();

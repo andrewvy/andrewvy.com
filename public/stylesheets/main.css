@@ -116,7 +116,7 @@ canvas {
  */
 .center {
   text-align: center;
-  dispaly: flex;
+  display: flex;
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items: center;
@@ -176,18 +176,21 @@ canvas {
 
 #feed {
   height: 200px;
-  padding: 15px 15px 0 15px;
-  overflow: hidden;
+  margin-top: 15px;
+  padding: 0 15px 0 15px;
+  overflow: scroll;
   text-align: left; }
   #feed .gha-gravatar,
   #feed .gha-gravatar-commit,
   #feed .gha-user-info,
+  #feed .gha-footer,
   #feed .gha-gravatar-user {
     display: none; }
   #feed .gha-time {
     color: #aaa;
     text-align: center;
-    margin-top: 20px; }
+    margin-top: 20px;
+    font-size: 10px; }
   #feed .gha-commits {
     font-size: 10px; }
     #feed .gha-commits li {

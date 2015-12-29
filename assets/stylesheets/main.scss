@@ -108,7 +108,7 @@ canvas {
 
 .center {
 	text-align: center;
-	dispaly: flex;
+	display: flex;
 	display: -webkit-flex;
 
 	align-items: center;
@@ -172,13 +172,15 @@ canvas {
 
 #feed {
 	height: 200px;
-	padding: 15px 15px 0 15px;
-	overflow: hidden;
+	margin-top: 15px;
+	padding: 0 15px 0 15px;
+	overflow: scroll;
 	text-align: left;
 
 	.gha-gravatar,
 	.gha-gravatar-commit,
 	.gha-user-info,
+	.gha-footer,
 	.gha-gravatar-user {
 		display: none;
 	}
@@ -187,6 +189,7 @@ canvas {
 		color: #aaa;
 		text-align: center;
 		margin-top: 20px;
+		font-size: 10px;
 	}
 
 	.gha-commits {
