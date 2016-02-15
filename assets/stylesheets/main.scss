@@ -148,6 +148,8 @@ canvas {
 }
 
 .page--about {
+	display: relative;
+
 	.name {}
 	.description { padding: 5px; }
 	.projects { margin-bottom: 25px; }

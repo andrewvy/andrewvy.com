@@ -148,23 +148,20 @@ canvas {
   .homePage-inner h1 {
     margin: 30px; }
 
-.page--about .description {
-  padding: 5px; }
-
-.page--about .projects {
-  margin-bottom: 25px; }
-
-.page--about .role {
-  margin: 20px; }
-
-.page--about .home {
-  margin-top: 20px; }
-
-.page--about .projects ul li {
-  margin-bottom: 20px; }
-
-.page--about .projects ul .link_description {
-  margin-top: 5px; }
+.page--about {
+  display: relative; }
+  .page--about .description {
+    padding: 5px; }
+  .page--about .projects {
+    margin-bottom: 25px; }
+  .page--about .role {
+    margin: 20px; }
+  .page--about .home {
+    margin-top: 20px; }
+  .page--about .projects ul li {
+    margin-bottom: 20px; }
+  .page--about .projects ul .link_description {
+    margin-top: 5px; }
 
 /*
  * Posts
