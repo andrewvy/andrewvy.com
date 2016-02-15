@@ -149,7 +149,7 @@ canvas {
     margin: 30px; }
 
 .page--about {
-  display: relative; }
+  position: relative; }
   .page--about .description {
     padding: 5px; }
   .page--about .projects {
