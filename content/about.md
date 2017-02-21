@@ -4,10 +4,10 @@ draft = false
 title = "about"
 type = "about"
 name = "Andrew Vy"
-job_title = "Front-end Developer"
+job_title = "Platform Engineer"
 company_name = "Opal"
 company_url = "http://workwithopal.com/"
-description = "I like to build cool, interesting (and sometimes silly) projects in my spare time. (Also, PHP is funny.)"
+description = "I like to build cool, interesting (and sometimes silly) projects in my spare time."
 
 [[links]]
 name = "HHVMCraft"
@@ -15,23 +15,28 @@ description = "Minecraft Server implemented in PHP, originally designed for the 
 link = "https://github.com/andrewvy/HHVMCraft"
 
 [[links]]
-name = "PHPNES"
-description = "NES Emulator implemented in PHP."
-link = "https://github.com/andrewvy/phpnes"
+name = "excoder"
+description = "Back-end agnostic video transcoding service in Elixir"
+link = "https://github.com/andrewvy/excoder"
 
 [[links]]
-name = "league-node"
-description = "League of Legends RTMP Client written in Node.js"
-link = "https://github.com/andrewvy/league-node"
+name = "blocks"
+description = "Simple voxel engine/game in C"
+link = "https://github.com/andrewvy/blocks"
 
 [[links]]
-name = "slack-pongbot"
-description = "Slack bot for ping-pong tracking"
-link = "https://github.com/andrewvy/slack-pongbot"
+name = "vape"
+description = "Toy scripting language implemented in Elixir for MUD scripting"
+link = "https://github.com/andrewvy/vape"
 
 [[links]]
-name = "Nima"
-description = "Static website generator in Nim"
-link = "https://github.com/andrewvy/nima"
+name = "fluxspace"
+description = "Elixir MUD engine/library"
+link = "https://github.com/andrewvy/fluxspace"
+
+[[links]]
+name = "Experiment"
+description = "Elixir Library port of GitHub's Scientist Gem."
+link = "https://github.com/andrewvy/experiment"
 
 +++

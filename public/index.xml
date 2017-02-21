@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Andrew Vy</title>
-    <link>http://andrewvy.com/</link>
+    <link>http://andrewvy.com/index.xml</link>
     <description>Recent content on Andrew Vy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
